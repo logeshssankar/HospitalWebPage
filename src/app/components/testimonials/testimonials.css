@@ -1,0 +1,594 @@
+.testimonials {
+
+  position: relative;
+
+  background: var(--bg-main);
+
+  overflow: hidden;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.section-title {
+
+  max-width: 700px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+
+}
+
+
+.section-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 14px;
+
+}
+
+
+.section-title h2 {
+
+  color: var(--text-main);
+
+  font-size: clamp(36px, 4vw, 50px);
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+
+  margin-bottom: 17px;
+
+}
+
+
+.section-title h2 span {
+
+  color: var(--primary);
+
+}
+
+
+.section-title p {
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================
+   TESTIMONIAL WRAPPER
+========================= */
+
+.testimonial-wrapper {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.testimonial-card {
+
+  position: relative;
+
+  width: min(720px, 100%);
+
+  padding: 45px 55px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px
+    rgba(24, 59, 67, 0.06);
+
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote-icon {
+
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: var(--secondary);
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.rating {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.rating i {
+
+  color: #d99a32;
+
+  font-size: 11px;
+
+}
+
+
+/* =========================
+   REVIEW
+========================= */
+
+blockquote {
+
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  color: var(--text-main);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  font-weight: 500;
+
+}
+
+
+/* =========================
+   PATIENT
+========================= */
+
+.patient {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--border);
+
+}
+
+
+.patient img {
+
+  width: 45px;
+
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+}
+
+
+.patient-info {
+
+  text-align: left;
+
+}
+
+
+.patient-info strong {
+
+  display: block;
+
+  color: var(--text-main);
+
+  font-size: 11px;
+
+  margin-bottom: 3px;
+
+}
+
+
+.patient-info span {
+
+  display: block;
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+
+}
+
+
+.verified {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-left: 15px;
+
+  padding-left: 15px;
+
+  border-left: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 8px;
+
+}
+
+
+.verified i {
+
+  color: var(--primary);
+
+  font-size: 10px;
+
+}
+
+
+/* =========================
+   SLIDER BUTTONS
+========================= */
+
+.slider-btn {
+
+  width: 42px;
+
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: var(--text-main);
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.slider-btn:hover {
+
+  background: var(--primary);
+
+  border-color: var(--primary);
+
+  color: white;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.testimonial-dots {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+
+}
+
+
+.testimonial-dots button {
+
+  width: 7px;
+
+  height: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #cdd8da;
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+
+}
+
+
+.testimonial-dots button.active {
+
+  width: 22px;
+
+  border-radius: 10px;
+
+  background: var(--primary);
+
+}
+
+
+/* =========================
+   TRUST
+========================= */
+
+.testimonial-trust {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 22px;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+}
+
+
+.testimonial-trust i {
+
+  color: var(--primary);
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+  .testimonial-wrapper {
+
+    gap: 15px;
+
+  }
+
+
+  .testimonial-card {
+
+    padding: 40px 35px;
+
+  }
+
+
+  blockquote {
+
+    font-size: 14px;
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .testimonials {
+
+    padding: 75px 0;
+
+  }
+
+
+  .section-title h2 {
+
+    font-size: 34px;
+
+  }
+
+
+  .section-title p {
+
+    font-size: 13px;
+
+  }
+
+
+  .testimonial-wrapper {
+
+    gap: 0;
+
+  }
+
+
+  .testimonial-card {
+
+    padding: 35px 22px;
+
+    border-radius: 15px;
+
+  }
+
+
+  .slider-btn {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 9px;
+
+  }
+
+
+  .slider-btn.previous {
+
+    left: -7px;
+
+  }
+
+
+  .slider-btn.next {
+
+    right: -7px;
+
+  }
+
+
+  blockquote {
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+  }
+
+
+  .patient {
+
+    flex-wrap: wrap;
+
+  }
+
+
+  .verified {
+
+    width: 100%;
+
+    justify-content: center;
+
+    margin: 8px 0 0;
+
+    padding: 8px 0 0;
+
+    border-left: none;
+
+    border-top: 1px solid var(--border);
+
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .testimonial-card {
+
+    padding: 30px 18px;
+
+  }
+
+
+  .quote-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+  }
+
+}

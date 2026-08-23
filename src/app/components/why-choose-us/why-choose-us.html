@@ -1,0 +1,193 @@
+<section class="why-choose" id="why-choose">
+
+  <div class="container">
+
+    <div class="why-grid">
+
+      <!-- =========================
+           LEFT CONTENT
+      ========================== -->
+
+      <div class="why-content">
+
+        <div class="section-label">
+          <i class="fa-solid fa-shield-heart"></i>
+          Why Choose MediCare
+        </div>
+
+
+        <h2>
+          Healthcare you can
+          <span>trust.</span>
+        </h2>
+
+
+        <p class="why-intro">
+          Your health deserves more than treatment. At MediCare,
+          we combine medical expertise, advanced technology and
+          compassionate care to create a better healthcare
+          experience for every patient.
+        </p>
+
+
+        <!-- Features -->
+
+        <div class="why-features">
+
+          <div class="why-feature">
+
+            <div class="feature-icon">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <div>
+              <h4>Experienced Medical Team</h4>
+
+              <p>
+                Skilled specialists committed to delivering
+                exceptional patient care.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="why-feature">
+
+            <div class="feature-icon">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+
+            <div>
+              <h4>Advanced Technology</h4>
+
+              <p>
+                Modern diagnostic and treatment technology
+                for accurate healthcare.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="why-feature">
+
+            <div class="feature-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div>
+              <h4>Patient-First Approach</h4>
+
+              <p>
+                Every decision is made with your comfort,
+                safety and wellbeing in mind.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <button
+          class="why-btn"
+          (click)="scrollToAppointment()"
+        >
+          Book an Appointment
+
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           RIGHT STATISTICS
+      ========================== -->
+
+      <div class="stats-wrapper">
+
+        <div class="stats-header">
+
+          <span>
+            Trusted Healthcare
+          </span>
+
+          <i class="fa-solid fa-arrow-up-right-dots"></i>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+          <div
+            class="stat-card"
+            *ngFor="let stat of statistics"
+          >
+
+            <div class="stat-icon">
+
+              <i [class]="stat.icon"></i>
+
+            </div>
+
+
+            <div class="stat-number">
+
+              {{ stat.value }}
+
+              <span>
+                {{ stat.suffix }}
+              </span>
+
+            </div>
+
+
+            <p>
+              {{ stat.label }}
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Trust Card -->
+
+        <div class="trust-card">
+
+          <div class="trust-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+
+          <div>
+
+            <strong>
+              Your health is our priority
+            </strong>
+
+            <p>
+              Safe, reliable and compassionate healthcare
+              for you and your family.
+            </p>
+
+          </div>
+
+
+          <div class="trust-check">
+            <i class="fa-solid fa-check"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

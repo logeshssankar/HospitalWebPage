@@ -1,1 +1,172 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+:root {
+  --primary: #167d8d;
+  --primary-dark: #10616d;
+  --secondary: #e9f7f8;
+
+  --accent: #36b37e;
+
+  --bg-main: #f8fbfc;
+  --bg-white: #ffffff;
+
+  --text-main: #183b43;
+  --text-secondary: #64777c;
+  --border: #dcebed;
+
+  --danger: #e45b5b;
+
+  --container: 1200px;
+}
+
+.container {
+  width: min(92%, var(--container));
+  margin: auto;
+}
+
+section {
+  padding: 100px 0;
+  scroll-margin-top: 50px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-title h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--text-secondary);
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+}
+
+
+.reveal.active {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+.reveal-left {
+
+  opacity: 0;
+
+  transform: translateX(-30px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+}
+
+
+.reveal-left.active {
+
+  opacity: 1;
+
+  transform: translateX(0);
+
+}
+
+
+.reveal-right {
+
+  opacity: 0;
+
+  transform: translateX(30px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+}
+
+
+.reveal-right.active {
+
+  opacity: 1;
+
+  transform: translateX(0);
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+
+    scroll-behavior: auto;
+
+  }
+
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+  }
+
+}

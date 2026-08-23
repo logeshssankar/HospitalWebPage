@@ -1,0 +1,82 @@
+<header class="navbar" [class.scrolled]="isScrolled">
+
+  <div class="container navbar-container">
+
+    <!-- Logo -->
+    <a class="logo" (click)="scrollTo('home')">
+
+      <div class="logo-icon">
+        <i class="fa-solid fa-heart-pulse"></i>
+      </div>
+
+      <div class="logo-text">
+        <span>Medi</span>Care
+        <small>Hospital</small>
+      </div>
+
+    </a>
+
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-menu">
+
+      <a
+        *ngFor="let item of navItems"
+        (click)="scrollTo(item.id)"
+        [class.active]="activeSection === item.id"
+      >
+        {{ item.label }}
+      </a>
+
+    </nav>
+
+
+    <!-- Appointment Button -->
+    <button
+      class="appointment-btn"
+      (click)="scrollTo('appointment')"
+    >
+      Book Appointment
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [class.open]="menuOpen"
+      aria-label="Toggle navigation"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+
+    <a
+      *ngFor="let item of navItems"
+      (click)="scrollTo(item.id)"
+      [class.active]="activeSection === item.id"
+    >
+      {{ item.label }}
+    </a>
+
+    <button
+      class="mobile-appointment"
+      (click)="scrollTo('appointment')"
+    >
+      Book Appointment
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+  </div>
+
+</header>

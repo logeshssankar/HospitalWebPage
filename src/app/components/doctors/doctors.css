@@ -1,0 +1,699 @@
+.doctors {
+
+  position: relative;
+
+  background: var(--bg-main);
+
+  overflow: hidden;
+
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-title {
+
+  max-width: 750px;
+
+  margin: 0 auto 55px;
+
+}
+
+
+.section-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 14px;
+
+}
+
+
+.section-title h2 {
+
+  font-size: clamp(36px, 4vw, 50px);
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+
+  color: var(--text-main);
+
+  margin-bottom: 18px;
+
+}
+
+
+.section-title h2 span {
+
+  color: var(--primary);
+
+}
+
+
+.section-title p {
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+
+}
+
+
+/* =========================
+   DOCTORS GRID
+========================= */
+
+.doctors-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+
+}
+
+
+/* =========================
+   DOCTOR CARD
+========================= */
+
+.doctor-card {
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 17px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+}
+
+
+.doctor-card:hover {
+
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(22, 125, 141, 0.25);
+
+  box-shadow:
+    0 20px 40px
+    rgba(24, 59, 67, 0.10);
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.doctor-image {
+
+  position: relative;
+
+  height: 280px;
+
+  overflow: hidden;
+
+  background: var(--secondary);
+
+}
+
+
+.doctor-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(24, 59, 67, 0.20),
+      transparent 45%
+    );
+
+  pointer-events: none;
+
+}
+
+
+.doctor-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  /* object-position: center top; */
+
+  transition:
+    transform 0.6s ease;
+
+}
+
+
+.doctor-card:hover .doctor-image img {
+
+  transform: scale(1.05);
+
+}
+
+
+/* =========================
+   AVAILABILITY
+========================= */
+
+.availability {
+
+  position: absolute;
+
+  top: 14px;
+
+  left: 14px;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 10px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 7px;
+
+  color: #287a55;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 12px
+    rgba(0, 0, 0, 0.08);
+
+}
+
+
+.status-dot {
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #43a86f;
+
+}
+
+
+/* Unavailable */
+
+.availability.unavailable {
+
+  color: #a05a5a;
+
+}
+
+
+.availability.unavailable .status-dot {
+
+  background: #c56a6a;
+
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.doctor-social {
+
+  position: absolute;
+
+  right: 14px;
+
+  bottom: 14px;
+
+  z-index: 3;
+
+  display: flex;
+
+  gap: 6px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.doctor-card:hover .doctor-social {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+.doctor-social a {
+
+  width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: white;
+
+  color: var(--text-main);
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.doctor-social a:hover {
+
+  background: var(--primary);
+
+  color: white;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.doctor-content {
+
+  padding: 20px;
+
+}
+
+
+.doctor-top {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.doctor-top h3 {
+
+  color: var(--text-main);
+
+  font-size: 16px;
+
+  line-height: 1.3;
+
+  margin-bottom: 4px;
+
+}
+
+
+.doctor-specialty {
+
+  display: block;
+
+  color: var(--primary);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+}
+
+
+.doctor-rating {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px 7px;
+
+  border-radius: 6px;
+
+  background: #fff8e9;
+
+  color: #a87420;
+
+  font-size: 10px;
+
+  flex-shrink: 0;
+
+}
+
+
+.doctor-rating i {
+
+  font-size: 8px;
+
+}
+
+
+/* =========================
+   META
+========================= */
+
+.doctor-meta {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+.doctor-meta span {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+
+}
+
+
+.doctor-meta i {
+
+  color: var(--primary);
+
+  font-size: 10px;
+
+}
+
+
+/* =========================
+   APPOINTMENT BUTTON
+========================= */
+
+.appointment-btn {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  padding: 11px;
+
+  border-radius: 8px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.appointment-btn:hover:not(:disabled) {
+
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+
+}
+
+
+.appointment-btn i {
+
+  font-size: 8px;
+
+}
+
+
+/* Disabled */
+
+.appointment-btn:disabled {
+
+  background: #d8dfe0;
+
+  color: #7d888a;
+
+  cursor: not-allowed;
+
+}
+
+
+/* =========================
+   BOTTOM CTA
+========================= */
+
+.doctors-bottom {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+}
+
+
+.view-doctors-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: gap 0.3s ease;
+
+}
+
+
+.view-doctors-btn:hover {
+
+  gap: 11px;
+
+}
+
+
+.view-doctors-btn i {
+
+  font-size: 9px;
+
+}
+
+
+/* =========================
+   LARGE TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .doctors-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+  }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 700px) {
+
+  .doctors {
+
+    padding: 80px 0;
+
+  }
+
+
+  .doctors-grid {
+
+    grid-template-columns: 1fr;
+
+    max-width: 430px;
+
+    margin: auto;
+
+  }
+
+
+  .doctor-image {
+
+    height: 340px;
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .doctors {
+
+    padding: 70px 0;
+
+  }
+
+
+  .section-title h2 {
+
+    font-size: 34px;
+
+  }
+
+
+  .section-title p {
+
+    font-size: 13px;
+
+  }
+
+
+  .doctor-image {
+
+    height: 300px;
+
+  }
+
+
+  .doctor-content {
+
+    padding: 18px;
+
+  }
+
+
+  .doctor-top h3 {
+
+    font-size: 15px;
+
+  }
+
+
+  .doctors-bottom {
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: center;
+
+  }
+
+}
+

@@ -1,0 +1,199 @@
+<section
+  class="testimonials"
+  id="testimonials"
+>
+
+  <div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="section-title">
+
+      <div class="section-label">
+
+        <i class="fa-solid fa-comment-medical"></i>
+
+        Patient Stories
+
+      </div>
+
+
+      <h2>
+
+        Care that makes a
+
+        <span>difference.</span>
+
+      </h2>
+
+
+      <p>
+
+        Hear from patients and families who have
+        experienced our care firsthand.
+
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         TESTIMONIAL
+    ========================== -->
+
+    <div class="testimonial-wrapper">
+
+
+      <!-- Previous -->
+
+      <button
+        class="slider-btn previous"
+        (click)="previousTestimonial()"
+        aria-label="Previous testimonial"
+      >
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+      </button>
+
+
+      <!-- Card -->
+
+      <div class="testimonial-card">
+
+
+        <!-- Quote -->
+
+        <div class="quote-icon">
+
+          <i class="fa-solid fa-quote-left"></i>
+
+        </div>
+
+
+        <!-- Rating -->
+
+        <div class="rating">
+
+          <i
+            *ngFor="
+              let star
+              of getStars(currentTestimonial.rating)
+            "
+            class="fa-solid fa-star"
+          ></i>
+
+        </div>
+
+
+        <!-- Review -->
+
+        <blockquote>
+
+          "{{ currentTestimonial.review }}"
+
+        </blockquote>
+
+
+        <!-- Patient -->
+
+        <div class="patient">
+
+          <img
+            [src]="currentTestimonial.image"
+            [alt]="currentTestimonial.name"
+          />
+
+
+          <div class="patient-info">
+
+            <strong>
+
+              {{ currentTestimonial.name }}
+
+            </strong>
+
+
+            <span>
+
+              {{ currentTestimonial.role }}
+
+            </span>
+
+          </div>
+
+
+          <div class="verified">
+
+            <i
+              class="fa-solid fa-circle-check"
+            ></i>
+
+            Verified Patient
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Next -->
+
+      <button
+        class="slider-btn next"
+        (click)="nextTestimonial()"
+        aria-label="Next testimonial"
+      >
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         DOTS
+    ========================== -->
+
+    <div class="testimonial-dots">
+
+      <button
+        *ngFor="
+          let testimonial
+          of testimonials;
+          let i = index
+        "
+        [class.active]="currentIndex === i"
+        (click)="selectTestimonial(i)"
+        [attr.aria-label]="
+          'View testimonial ' + (i + 1)
+        "
+      >
+      </button>
+
+    </div>
+
+
+    <!-- Trust Message -->
+
+    <div class="testimonial-trust">
+
+      <i class="fa-solid fa-shield-heart"></i>
+
+      <span>
+
+        Trusted by thousands of patients
+        across our community
+
+      </span>
+
+    </div>
+
+  </div>
+
+</section>

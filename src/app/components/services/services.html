@@ -1,0 +1,97 @@
+<section class="services" id="services">
+
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-title">
+
+      <div class="section-label">
+        <i class="fa-solid fa-stethoscope"></i>
+        Our Services
+      </div>
+
+      <h2>
+        Healthcare designed
+        <span>around you.</span>
+      </h2>
+
+      <p>
+        From routine checkups to specialized treatments,
+        our medical team provides comprehensive care using
+        modern technology and proven medical practices.
+      </p>
+
+    </div>
+
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+
+      <div
+        class="service-card"
+        *ngFor="let service of services"
+        [class.featured]="service.featured"
+      >
+
+        <!-- Icon -->
+        <div
+          class="service-icon"
+          [style.background]="service.iconBackground"
+        >
+          <i [class]="service.icon"></i>
+        </div>
+
+
+        <!-- Content -->
+        <div class="service-content">
+
+          <span class="service-number">
+            {{ service.number }}
+          </span>
+
+          <h3>
+            {{ service.title }}
+          </h3>
+
+          <p>
+            {{ service.description }}
+          </p>
+
+        </div>
+
+
+        <!-- Link -->
+        <button
+          class="service-link"
+          (click)="selectService(service.title)"
+        >
+          Learn More
+
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bottom CTA -->
+    <div class="services-bottom">
+
+      <p>
+        Can't find the service you're looking for?
+      </p>
+
+      <button
+        class="view-all-btn"
+        (click)="scrollToAppointment()"
+      >
+        Talk to Our Team
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
