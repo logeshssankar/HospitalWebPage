@@ -1,31 +1,20 @@
 .contact {
-
   position: relative;
 
   background: var(--bg-white);
 
   overflow: hidden;
-
 }
 
-
-/* =========================
-   SECTION HEADER
-========================= */
-
 .section-title {
-
   max-width: 700px;
 
   margin: 0 auto 50px;
 
   text-align: center;
-
 }
 
-
 .section-label {
-
   display: inline-flex;
 
   align-items: center;
@@ -43,12 +32,9 @@
   letter-spacing: 1px;
 
   margin-bottom: 14px;
-
 }
 
-
 .section-title h2 {
-
   color: var(--text-main);
 
   font-size: clamp(36px, 4vw, 50px);
@@ -58,34 +44,21 @@
   letter-spacing: -1.5px;
 
   margin-bottom: 17px;
-
 }
-
 
 .section-title h2 span {
-
   color: var(--primary);
-
 }
 
-
 .section-title p {
-
   color: var(--text-secondary);
 
   font-size: 14px;
 
   line-height: 1.8;
-
 }
 
-
-/* =========================
-   CONTACT GRID
-========================= */
-
 .contact-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -95,27 +68,17 @@
   gap: 22px;
 
   align-items: start;
-
 }
 
-
-/* =========================
-   LEFT
-========================= */
-
 .contact-left {
-
   display: flex;
 
   flex-direction: column;
 
   gap: 15px;
-
 }
 
-
 .contact-card {
-
   padding: 28px;
 
   background: var(--bg-main);
@@ -123,23 +86,17 @@
   border: 1px solid var(--border);
 
   border-radius: 17px;
-
 }
 
-
 .contact-card h3 {
-
   color: var(--text-main);
 
   font-size: 20px;
 
   margin-bottom: 7px;
-
 }
 
-
 .contact-description {
-
   color: var(--text-secondary);
 
   font-size: 10px;
@@ -147,16 +104,9 @@
   line-height: 1.7;
 
   margin-bottom: 25px;
-
 }
 
-
-/* =========================
-   CONTACT DETAILS
-========================= */
-
 .contact-detail {
-
   display: flex;
 
   align-items: flex-start;
@@ -166,12 +116,9 @@
   padding: 15px 0;
 
   border-top: 1px solid var(--border);
-
 }
 
-
 .detail-icon {
-
   width: 36px;
 
   height: 36px;
@@ -191,12 +138,9 @@
   color: var(--primary);
 
   font-size: 12px;
-
 }
 
-
 .contact-detail span {
-
   display: block;
 
   color: var(--text-secondary);
@@ -208,12 +152,9 @@
   letter-spacing: 0.6px;
 
   margin-bottom: 3px;
-
 }
 
-
 .contact-detail strong {
-
   display: block;
 
   color: var(--text-main);
@@ -221,27 +162,17 @@
   font-size: 10px;
 
   margin-bottom: 3px;
-
 }
 
-
 .contact-detail p {
-
   color: var(--text-secondary);
 
   font-size: 9px;
 
   line-height: 1.5;
-
 }
 
-
-/* =========================
-   EMERGENCY
-========================= */
-
 .contact-emergency {
-
   display: flex;
 
   align-items: center;
@@ -255,12 +186,9 @@
   background: var(--text-main);
 
   color: white;
-
 }
 
-
 .emergency-icon {
-
   width: 38px;
 
   height: 38px;
@@ -275,69 +203,44 @@
 
   border-radius: 9px;
 
-  background:
-    rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 
   color: var(--accent);
-
 }
 
-
 .contact-emergency span {
-
   display: block;
 
-  color:
-    rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.55);
 
   font-size: 8px;
 
   margin-bottom: 3px;
-
 }
 
-
 .contact-emergency strong {
-
   color: white;
 
   font-size: 11px;
-
 }
 
-
 .emergency-arrow {
-
   margin-left: auto;
 
   color: var(--accent);
 
   font-size: 10px;
-
 }
 
-
-/* =========================
-   RIGHT
-========================= */
-
 .contact-right {
-
   display: flex;
 
   flex-direction: column;
 
   gap: 15px;
-
 }
 
-
-/* =========================
-   MAP
-========================= */
-
 .map-card {
-
   height: 260px;
 
   overflow: hidden;
@@ -345,12 +248,9 @@
   border: 1px solid var(--border);
 
   border-radius: 17px;
-
 }
 
-
 .map-placeholder {
-
   position: relative;
 
   width: 100%;
@@ -363,16 +263,12 @@
 
   justify-content: center;
 
-  background:
-    #e8eeee;
+  background: #e8eeee;
 
   overflow: hidden;
-
 }
 
-
 .map-grid {
-
   position: absolute;
 
   inset: -50%;
@@ -380,33 +276,15 @@
   opacity: 0.45;
 
   background-image:
+    linear-gradient(25deg, transparent 45%, #ffffff 46%, #ffffff 48%, transparent 49%),
+    linear-gradient(-25deg, transparent 45%, #ffffff 46%, #ffffff 48%, transparent 49%);
 
-    linear-gradient(
-      25deg,
-      transparent 45%,
-      #ffffff 46%,
-      #ffffff 48%,
-      transparent 49%
-    ),
-
-    linear-gradient(
-      -25deg,
-      transparent 45%,
-      #ffffff 46%,
-      #ffffff 48%,
-      transparent 49%
-    );
-
-  background-size:
-    100px 70px;
+  background-size: 100px 70px;
 
   transform: rotate(-8deg);
-
 }
 
-
 .map-pin {
-
   position: relative;
 
   z-index: 2;
@@ -431,22 +309,14 @@
 
   transform: rotate(-45deg);
 
-  box-shadow:
-    0 8px 20px
-    rgba(22, 125, 141, 0.25);
-
+  box-shadow: 0 8px 20px rgba(22, 125, 141, 0.25);
 }
-
 
 .map-pin i {
-
   transform: rotate(45deg);
-
 }
 
-
 .pin-pulse {
-
   position: absolute;
 
   width: 75px;
@@ -459,35 +329,24 @@
 
   opacity: 0.3;
 
-  animation:
-    mapPulse 2s infinite;
-
+  animation: mapPulse 2s infinite;
 }
 
-
 @keyframes mapPulse {
-
   0% {
-
     transform: scale(0.6);
 
     opacity: 0.5;
-
   }
 
   100% {
-
     transform: scale(1.4);
 
     opacity: 0;
-
   }
-
 }
 
-
 .map-location {
-
   position: absolute;
 
   z-index: 3;
@@ -510,15 +369,10 @@
 
   text-align: center;
 
-  box-shadow:
-    0 8px 20px
-    rgba(0, 0, 0, 0.08);
-
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-
 .map-location strong {
-
   display: block;
 
   color: var(--text-main);
@@ -526,25 +380,15 @@
   font-size: 10px;
 
   margin-bottom: 3px;
-
 }
 
-
 .map-location span {
-
   color: var(--text-secondary);
 
   font-size: 8px;
-
 }
 
-
-/* =========================
-   MESSAGE CARD
-========================= */
-
 .message-card {
-
   padding: 26px;
 
   background: white;
@@ -552,12 +396,9 @@
   border: 1px solid var(--border);
 
   border-radius: 17px;
-
 }
 
-
 .message-header {
-
   display: flex;
 
   align-items: center;
@@ -569,32 +410,23 @@
   padding-bottom: 17px;
 
   border-bottom: 1px solid var(--border);
-
 }
 
-
 .message-header h3 {
-
   color: var(--text-main);
 
   font-size: 16px;
 
   margin-bottom: 4px;
-
 }
 
-
 .message-header p {
-
   color: var(--text-secondary);
 
   font-size: 9px;
-
 }
 
-
 .message-icon {
-
   width: 40px;
 
   height: 40px;
@@ -612,35 +444,21 @@
   color: var(--primary);
 
   font-size: 13px;
-
 }
-
-
-/* =========================
-   FORM
-========================= */
 
 .form-row {
-
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 15px;
-
 }
-
 
 .form-group {
-
   margin-bottom: 15px;
-
 }
 
-
 .form-group label {
-
   display: block;
 
   color: var(--text-main);
@@ -650,21 +468,14 @@
   font-weight: 600;
 
   margin-bottom: 6px;
-
 }
-
 
 .form-group label span {
-
   color: #c65e5e;
-
 }
 
-
 .form-group input,
-
 .form-group textarea {
-
   width: 100%;
 
   padding: 11px 12px;
@@ -688,59 +499,36 @@
   transition:
     border-color 0.25s ease,
     box-shadow 0.25s ease;
-
 }
-
 
 .form-group input {
-
   height: 40px;
-
 }
-
 
 .form-group textarea {
-
   min-height: 85px;
-
 }
-
 
 .form-group input::placeholder,
-
 .form-group textarea::placeholder {
-
   color: #a5afb1;
-
 }
 
-
 .form-group input:focus,
-
 .form-group textarea:focus {
-
   background: white;
 
   border-color: var(--primary);
 
-  box-shadow:
-    0 0 0 3px
-    rgba(22, 125, 141, 0.07);
-
+  box-shadow: 0 0 0 3px rgba(22, 125, 141, 0.07);
 }
-
 
 .form-group input.error-input,
-
 .form-group textarea.error-input {
-
   border-color: #c65e5e;
-
 }
 
-
 .form-group small {
-
   display: block;
 
   color: #c65e5e;
@@ -748,16 +536,9 @@
   font-size: 8px;
 
   margin-top: 4px;
-
 }
 
-
-/* =========================
-   MESSAGE BUTTON
-========================= */
-
 .message-btn {
-
   width: 100%;
 
   display: flex;
@@ -784,36 +565,21 @@
     transform 0.3s ease,
     background 0.3s ease,
     box-shadow 0.3s ease;
-
 }
 
-
 .message-btn:hover {
-
   background: var(--primary-dark);
 
   transform: translateY(-2px);
 
-  box-shadow:
-    0 9px 20px
-    rgba(22, 125, 141, 0.17);
-
+  box-shadow: 0 9px 20px rgba(22, 125, 141, 0.17);
 }
-
 
 .message-btn i {
-
   font-size: 8px;
-
 }
 
-
-/* =========================
-   SUCCESS MODAL
-========================= */
-
 .message-success-overlay {
-
   position: fixed;
 
   inset: 0;
@@ -828,16 +594,12 @@
 
   padding: 20px;
 
-  background:
-    rgba(15, 35, 40, 0.55);
+  background: rgba(15, 35, 40, 0.55);
 
   backdrop-filter: blur(5px);
-
 }
 
-
 .message-success {
-
   position: relative;
 
   width: 100%;
@@ -852,41 +614,26 @@
 
   text-align: center;
 
-  box-shadow:
-    0 25px 70px
-    rgba(0, 0, 0, 0.20);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
 
-  animation:
-    messageSuccessIn 0.3s ease;
-
+  animation: messageSuccessIn 0.3s ease;
 }
 
-
 @keyframes messageSuccessIn {
-
   from {
-
     opacity: 0;
 
-    transform: translateY(12px)
-               scale(0.96);
-
+    transform: translateY(12px) scale(0.96);
   }
 
   to {
-
     opacity: 1;
 
-    transform: translateY(0)
-               scale(1);
-
+    transform: translateY(0) scale(1);
   }
-
 }
 
-
 .success-close {
-
   position: absolute;
 
   top: 12px;
@@ -912,12 +659,9 @@
   color: var(--text-secondary);
 
   font-size: 10px;
-
 }
 
-
 .success-check {
-
   width: 60px;
 
   height: 60px;
@@ -937,23 +681,17 @@
   color: var(--primary);
 
   font-size: 21px;
-
 }
 
-
 .message-success h3 {
-
   color: var(--text-main);
 
   font-size: 19px;
 
   margin-bottom: 8px;
-
 }
 
-
 .message-success p {
-
   color: var(--text-secondary);
 
   font-size: 10px;
@@ -961,12 +699,9 @@
   line-height: 1.7;
 
   margin-bottom: 18px;
-
 }
 
-
 .success-done {
-
   padding: 10px 24px;
 
   border-radius: 7px;
@@ -978,25 +713,14 @@
   font-size: 10px;
 
   font-weight: 600;
-
 }
 
-
-/* =========================
-   TABLET
-========================= */
-
 @media (max-width: 850px) {
-
   .contact-grid {
-
     grid-template-columns: 1fr;
-
   }
 
-
   .contact-left {
-
     display: grid;
 
     grid-template-columns:
@@ -1004,99 +728,251 @@
       minmax(250px, 0.6fr);
 
     align-items: start;
-
   }
-
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
-
   .contact {
-
     padding: 75px 0;
-
   }
-
 
   .section-title h2 {
-
     font-size: 34px;
-
   }
-
 
   .section-title p {
-
     font-size: 13px;
-
   }
-
 
   .contact-left {
-
     display: flex;
-
   }
 
-
   .contact-card,
-
   .message-card {
-
     padding: 20px;
 
     border-radius: 14px;
-
   }
-
 
   .map-card {
-
     height: 220px;
-
   }
 
-
   .form-row {
-
     grid-template-columns: 1fr;
 
     gap: 0;
-
   }
-
 
   .contact-emergency {
-
     padding: 15px;
-
   }
-
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media (max-width: 380px) {
-
   .contact-card h3 {
-
     font-size: 18px;
-
   }
-
 
   .map-card {
-
     height: 200px;
-
   }
+}
 
+.contact .section-title .section-label {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+.contact .section-title h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact .section-title > p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes titleFadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title.section-in-view .section-label {
+  animation: titleFadeDown 0.55s ease both;
+  animation-delay: 0.05s;
+}
+
+.section-title.section-in-view h2 {
+  animation: titleFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.15s;
+}
+
+.section-title.section-in-view > p {
+  animation: titleFadeUp 0.6s ease both;
+  animation-delay: 0.3s;
+}
+
+.contact-left .contact-card {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.contact-card .contact-detail {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.contact-left .contact-emergency {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes cardSlideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes detailFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emergencyFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-left.section-in-view .contact-card {
+  animation: cardSlideInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.35s;
+}
+
+.contact-left.section-in-view .contact-card .contact-detail:nth-of-type(1) {
+  animation: detailFadeUp 0.45s ease both;
+  animation-delay: 0.55s;
+}
+.contact-left.section-in-view .contact-card .contact-detail:nth-of-type(2) {
+  animation: detailFadeUp 0.45s ease both;
+  animation-delay: 0.63s;
+}
+.contact-left.section-in-view .contact-card .contact-detail:nth-of-type(3) {
+  animation: detailFadeUp 0.45s ease both;
+  animation-delay: 0.71s;
+}
+.contact-left.section-in-view .contact-card .contact-detail:nth-of-type(4) {
+  animation: detailFadeUp 0.45s ease both;
+  animation-delay: 0.79s;
+}
+
+.contact-left.section-in-view .contact-emergency {
+  animation: emergencyFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.95s;
+}
+
+.contact-right .map-card {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.contact-right .message-card {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.message-card .form-row,
+.message-card > form > .form-group,
+.message-card .message-btn {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+@keyframes cardSlideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fieldFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-right.section-in-view .map-card {
+  animation: cardSlideInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.4s;
+}
+
+.contact-right.section-in-view .message-card {
+  animation: cardSlideInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.55s;
+}
+
+.contact-right.section-in-view .message-card .form-row:nth-of-type(1) {
+  animation: fieldFadeUp 0.5s ease both;
+  animation-delay: 0.75s;
+}
+
+.contact-right.section-in-view .message-card .form-row:nth-of-type(2) {
+  animation: fieldFadeUp 0.5s ease both;
+  animation-delay: 0.85s;
+}
+
+.contact-right.section-in-view .message-card > form > .form-group:last-of-type {
+  animation: fieldFadeUp 0.5s ease both;
+  animation-delay: 0.95s;
+}
+
+.contact-right.section-in-view .message-card .message-btn {
+  animation: fieldFadeUp 0.5s ease both;
+  animation-delay: 1.05s;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.message-success-overlay {
+  animation: overlayFadeIn 0.3s ease both;
+}
+
+.message-success {
+  animation: modalPopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.05s;
 }

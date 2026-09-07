@@ -1,10 +1,6 @@
-<section class="doctors" id="doctors">
-
+<section class="doctors" id="doctors" #doctorsSection>
   <div class="container">
-
-    <!-- Section Header -->
     <div class="section-title">
-
       <div class="section-label">
         <i class="fa-solid fa-user-doctor"></i>
         Our Specialists
@@ -16,78 +12,36 @@
       </h2>
 
       <p>
-        Our experienced doctors combine medical expertise,
-        advanced technology, and compassionate care to help
-        every patient achieve better health.
+        Our experienced doctors combine medical expertise, advanced technology, and compassionate
+        care to help every patient achieve better health.
       </p>
-
     </div>
 
-
-    <!-- Doctors Grid -->
-    <div class="doctors-grid ">
-
-      <article
-        class="doctor-card"
-        *ngFor="let doctor of doctors"
-      >
-
-        <!-- Doctor Image -->
+    <div class="doctors-grid">
+      <article class="doctor-card" #doctorCard *ngFor="let doctor of doctors; let i = index">
         <div class="doctor-image">
+          <img [src]="doctor.image" [alt]="doctor.name" />
 
-          <img
-            [src]="doctor.image"
-            [alt]="doctor.name"
-          />
-
-          <!-- Availability -->
-          <span
-            class="availability"
-            [class.unavailable]="!doctor.available"
-          >
-
+          <span class="availability" [class.unavailable]="!doctor.available">
             <span class="status-dot"></span>
 
-            {{
-              doctor.available
-                ? 'Available Today'
-                : 'On Leave'
-            }}
-
+            {{ doctor.available ? 'Available Today' : 'On Leave' }}
           </span>
 
-
-          <!-- Social Links -->
           <div class="doctor-social">
-
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              (click)="$event.preventDefault()"
-            >
+            <a href="#" aria-label="LinkedIn" (click)="$event.preventDefault()">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
 
-            <a
-              href="#"
-              aria-label="Twitter"
-              (click)="$event.preventDefault()"
-            >
+            <a href="#" aria-label="Twitter" (click)="$event.preventDefault()">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-
           </div>
-
         </div>
 
-
-        <!-- Doctor Content -->
         <div class="doctor-content">
-
           <div class="doctor-top">
-
             <div>
-
               <h3>
                 {{ doctor.name }}
               </h3>
@@ -95,25 +49,18 @@
               <span class="doctor-specialty">
                 {{ doctor.specialty }}
               </span>
-
             </div>
 
-
             <div class="doctor-rating">
-
               <i class="fa-solid fa-star"></i>
 
               <span>
                 {{ doctor.rating }}
               </span>
-
             </div>
-
           </div>
 
-
           <div class="doctor-meta">
-
             <span>
               <i class="fa-regular fa-clock"></i>
               {{ doctor.experience }} years
@@ -123,50 +70,28 @@
               <i class="fa-solid fa-users"></i>
               {{ doctor.patients }}+ patients
             </span>
-
           </div>
-
 
           <button
             class="appointment-btn"
             [disabled]="!doctor.available"
             (click)="bookAppointment(doctor)"
           >
-
-            {{
-              doctor.available
-                ? 'Book Appointment'
-                : 'Currently Unavailable'
-            }}
+            {{ doctor.available ? 'Book Appointment' : 'Currently Unavailable' }}
 
             <i class="fa-solid fa-arrow-right"></i>
-
           </button>
-
         </div>
-
       </article>
-
     </div>
 
-
-    <!-- Bottom CTA -->
     <div class="doctors-bottom">
+      <span> Looking for another specialist? </span>
 
-      <span>
-        Looking for another specialist?
-      </span>
-
-      <button
-        class="view-doctors-btn"
-        (click)="viewAllDoctors()"
-      >
+      <button class="view-doctors-btn" (click)="viewAllDoctors()">
         View All Doctors
         <i class="fa-solid fa-arrow-right"></i>
       </button>
-
     </div>
-
   </div>
-
 </section>

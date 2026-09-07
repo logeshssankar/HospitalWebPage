@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Hero } from "./components/hero/hero";
 import { About } from "./components/about/about";
@@ -18,56 +18,7 @@ import { Footer } from './components/footer/footer';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements AfterViewInit {
+export class App {
   protected readonly title = signal('nursery');
-
-  ngAfterViewInit(): void {
-
-    this.setupRevealAnimation();
-}
-
-private setupRevealAnimation(): void {
-
-    const elements =
-      document.querySelectorAll(
-        '.reveal, .reveal-left, .reveal-right'
-      );
-
-
-    const observer =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                'active'
-              );
-
-              observer.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.12
-        }
-
-      );
-
-
-    elements.forEach(element => {
-
-      observer.observe(element);
-
-    });
-
-  }
+  
 }

@@ -1,20 +1,12 @@
 .departments {
-
   position: relative;
 
   background: var(--bg-white);
 
   overflow: hidden;
-
 }
 
-
-/* =========================
-   SECTION HEADER
-========================= */
-
 .section-title {
-
   max-width: 750px;
 
   margin-left: auto;
@@ -22,12 +14,9 @@
   margin-right: auto;
 
   margin-bottom: 55px;
-
 }
 
-
 .section-label {
-
   display: inline-flex;
 
   align-items: center;
@@ -47,12 +36,9 @@
   letter-spacing: 1px;
 
   margin-bottom: 14px;
-
 }
 
-
 .section-title h2 {
-
   font-size: clamp(36px, 4vw, 50px);
 
   line-height: 1.15;
@@ -62,34 +48,21 @@
   margin-bottom: 18px;
 
   color: var(--text-main);
-
 }
-
 
 .section-title h2 span {
-
   color: var(--primary);
-
 }
 
-
 .section-title p {
-
   font-size: 14px;
 
   line-height: 1.8;
 
   color: var(--text-secondary);
-
 }
 
-
-/* =========================
-   EXPLORER
-========================= */
-
 .department-explorer {
-
   display: grid;
 
   grid-template-columns:
@@ -105,27 +78,17 @@
   border-radius: 20px;
 
   overflow: hidden;
-
 }
 
-
-/* =========================
-   LEFT LIST
-========================= */
-
 .department-list {
-
   padding: 20px;
 
   background: white;
 
   border-right: 1px solid var(--border);
-
 }
 
-
 .department-item {
-
   width: 100%;
 
   display: flex;
@@ -151,36 +114,24 @@
   cursor: pointer;
 
   transition:
-
     background 0.3s ease,
-
     border-color 0.3s ease,
-
     transform 0.3s ease;
-
 }
 
-
 .department-item:hover {
-
   background: var(--secondary);
 
   border-color: var(--border);
-
 }
-
 
 .department-item.active {
-
   background: var(--secondary);
 
-  border-color: rgba(22, 125, 141, 0.20);
-
+  border-color: rgba(22, 125, 141, 0.2);
 }
 
-
 .department-item-left {
-
   display: flex;
 
   align-items: center;
@@ -188,12 +139,9 @@
   gap: 12px;
 
   min-width: 0;
-
 }
 
-
 .department-icon {
-
   width: 43px;
 
   height: 43px;
@@ -215,34 +163,22 @@
   font-size: 16px;
 
   transition:
-
     background 0.3s ease,
-
     color 0.3s ease;
-
 }
 
-
 .department-item:hover .department-icon,
-
 .department-item.active .department-icon {
-
   background: var(--primary);
 
   color: white;
-
 }
-
 
 .department-name {
-
   min-width: 0;
-
 }
 
-
 .department-name strong {
-
   display: block;
 
   color: var(--text-main);
@@ -250,12 +186,9 @@
   font-size: 13px;
 
   font-weight: 600;
-
 }
 
-
 .department-name span {
-
   display: block;
 
   margin-top: 3px;
@@ -263,12 +196,9 @@
   color: var(--text-secondary);
 
   font-size: 10px;
-
 }
 
-
 .arrow-icon {
-
   flex-shrink: 0;
 
   color: var(--text-secondary);
@@ -276,36 +206,20 @@
   font-size: 10px;
 
   transition:
-
     color 0.3s ease,
-
     transform 0.3s ease;
-
 }
-
 
 .department-item:hover .arrow-icon,
-
 .department-item.active .arrow-icon {
-
   color: var(--primary);
-
 }
-
 
 .department-item.active .arrow-icon {
-
   transform: translateX(3px);
-
 }
-
-
-/* =========================
-   RIGHT DETAILS
-========================= */
 
 .department-details {
-
   position: relative;
 
   display: flex;
@@ -315,23 +229,17 @@
   padding: 60px;
 
   overflow: hidden;
-
 }
 
-
 .details-content {
-
   position: relative;
 
   z-index: 2;
 
   max-width: 560px;
-
 }
 
-
 .details-icon {
-
   width: 60px;
 
   height: 60px;
@@ -352,17 +260,10 @@
 
   margin-bottom: 22px;
 
-  box-shadow:
-
-    0 10px 25px
-
-    rgba(22, 125, 141, 0.20);
-
+  box-shadow: 0 10px 25px rgba(22, 125, 141, 0.2);
 }
 
-
 .details-label {
-
   display: block;
 
   color: var(--primary);
@@ -376,12 +277,9 @@
   letter-spacing: 1.5px;
 
   margin-bottom: 8px;
-
 }
 
-
 .details-content h3 {
-
   font-size: 35px;
 
   line-height: 1.2;
@@ -389,12 +287,9 @@
   color: var(--text-main);
 
   margin-bottom: 15px;
-
 }
 
-
 .details-content > p {
-
   color: var(--text-secondary);
 
   font-size: 13px;
@@ -402,16 +297,9 @@
   line-height: 1.8;
 
   margin-bottom: 25px;
-
 }
 
-
-/* =========================
-   FEATURES
-========================= */
-
 .department-features {
-
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
@@ -419,12 +307,9 @@
   gap: 12px;
 
   margin-bottom: 30px;
-
 }
 
-
 .department-feature {
-
   display: flex;
 
   align-items: center;
@@ -434,25 +319,15 @@
   color: var(--text-main);
 
   font-size: 11px;
-
 }
 
-
 .department-feature i {
-
   color: var(--accent);
 
   font-size: 12px;
-
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
 .department-btn {
-
   display: inline-flex;
 
   align-items: center;
@@ -472,37 +347,20 @@
   font-weight: 600;
 
   transition:
-
     background 0.3s ease,
-
     transform 0.3s ease,
-
     box-shadow 0.3s ease;
-
 }
 
-
 .department-btn:hover {
-
   background: var(--primary);
 
   transform: translateY(-2px);
 
-  box-shadow:
-
-    0 8px 20px
-
-    rgba(22, 125, 141, 0.18);
-
+  box-shadow: 0 8px 20px rgba(22, 125, 141, 0.18);
 }
 
-
-/* =========================
-   DECORATION
-========================= */
-
 .details-decoration {
-
   position: absolute;
 
   right: -90px;
@@ -526,13 +384,10 @@
   color: rgba(22, 125, 141, 0.08);
 
   font-size: 170px;
-
 }
 
-
 .details-decoration::before {
-
-  content: "";
+  content: '';
 
   position: absolute;
 
@@ -543,25 +398,14 @@
   border: 2px dashed rgba(22, 125, 141, 0.12);
 
   border-radius: 50%;
-
 }
 
-
-/* =========================
-   TABLET
-========================= */
-
 @media (max-width: 900px) {
-
   .department-explorer {
-
     grid-template-columns: 1fr;
-
   }
 
-
   .department-list {
-
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -571,146 +415,88 @@
     border-right: none;
 
     border-bottom: 1px solid var(--border);
-
   }
-
 
   .department-item {
-
     margin-bottom: 0;
-
   }
-
 
   .department-name span,
-
   .arrow-icon {
-
     display: none;
-
   }
 
-
   .department-details {
-
     min-height: 470px;
 
     padding: 45px;
-
   }
-
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
-
   .departments {
-
     padding: 75px 0;
-
   }
-
 
   .section-title h2 {
-
     font-size: 34px;
-
   }
-
 
   .section-title p {
-
     font-size: 13px;
-
   }
-
 
   .department-explorer {
-
     border-radius: 15px;
-
   }
 
-
   .department-list {
-
     grid-template-columns: repeat(2, 1fr);
 
     padding: 10px;
-
   }
-
 
   .department-item {
-
     padding: 10px;
-
   }
-
 
   .department-item-left {
-
     gap: 8px;
-
   }
 
-
   .department-icon {
-
     width: 36px;
 
     height: 36px;
 
     font-size: 13px;
-
   }
-
 
   .department-name strong {
-
     font-size: 11px;
-
   }
 
-
   .department-details {
-
     min-height: 500px;
 
     padding: 35px 25px;
-
   }
-
 
   .details-content h3 {
-
     font-size: 28px;
-
   }
-
 
   .details-content > p {
-
     font-size: 12px;
-
   }
 
-
   .department-features {
-
     grid-template-columns: 1fr;
 
     gap: 10px;
-
   }
 
-
   .details-decoration {
-
     width: 220px;
 
     height: 220px;
@@ -720,36 +506,82 @@
     bottom: -80px;
 
     font-size: 110px;
-
   }
-
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media (max-width: 380px) {
-
   .department-list {
-
     grid-template-columns: 1fr;
-
   }
-
 
   .department-name span {
-
     display: block;
-
   }
-
 
   .department-details {
-
     padding: 30px 20px;
-
   }
+}
 
+@keyframes iconDiagonalReveal {
+  0% {
+    transform: translate(-140px, -140px) scale(0.75);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details-content.animate-in .details-icon {
+  animation: iconDiagonalReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.details-content.animate-in .details-label {
+  animation: contentReveal 0.5s ease both;
+  animation-delay: 0.22s;
+}
+
+.details-content.animate-in h3 {
+  animation: contentReveal 0.5s ease both;
+  animation-delay: 0.3s;
+}
+
+.details-content.animate-in > p {
+  animation: contentReveal 0.5s ease both;
+  animation-delay: 0.38s;
+}
+
+.details-content.animate-in .department-feature {
+  animation: contentReveal 0.45s ease both;
+  opacity: 0;
+}
+.details-content.animate-in .department-feature:nth-child(1) {
+  animation-delay: 0.46s;
+}
+.details-content.animate-in .department-feature:nth-child(2) {
+  animation-delay: 0.52s;
+}
+.details-content.animate-in .department-feature:nth-child(3) {
+  animation-delay: 0.58s;
+}
+.details-content.animate-in .department-feature:nth-child(4) {
+  animation-delay: 0.64s;
+}
+
+.details-content.animate-in .department-btn {
+  animation: contentReveal 0.5s ease both;
+  animation-delay: 0.7s;
 }

@@ -1,331 +1,126 @@
 <footer class="footer">
-
   <div class="container">
-
-
-    <!-- =========================
-         MAIN FOOTER
-    ========================== -->
-
     <div class="footer-main">
-
-
-      <!-- =========================
-           BRAND
-      ========================== -->
-
       <div class="footer-brand">
-
-        <a
-          class="footer-logo"
-          (click)="scrollTo('home')"
-        >
-
+        <a class="footer-logo" (click)="scrollTo('home')">
           <span class="logo-icon">
-
             <i class="fa-solid fa-plus"></i>
-
           </span>
 
           Medi<span>Care</span>
-
         </a>
-
 
         <p>
-
-          Providing trusted healthcare with
-          compassion, expertise and advanced
-          medical technology for you and your
-          family.
-
+          Providing trusted healthcare with compassion, expertise and advanced medical technology
+          for you and your family.
         </p>
 
-
-        <!-- Social -->
-
         <div class="social-links">
-
-          <a
-            href="#"
-            aria-label="LinkedIn"
-          >
-
+          <a href="#" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
-
           </a>
 
-
-          <a
-            href="#"
-            aria-label="Facebook"
-          >
-
+          <a href="#" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
-
           </a>
 
-
-          <a
-            href="#"
-            aria-label="Twitter"
-          >
-
+          <a href="#" aria-label="Twitter">
             <i class="fa-brands fa-x-twitter"></i>
-
           </a>
 
-
-          <a
-            href="#"
-            aria-label="Instagram"
-          >
-
+          <a href="#" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
-
           </a>
-
         </div>
-
       </div>
 
-
-      <!-- =========================
-           QUICK LINKS
-      ========================== -->
-
       <div class="footer-column">
-
-        <h4>
-
-          Quick Links
-
-        </h4>
-
+        <h4>Quick Links</h4>
 
         <ul>
-
-          <li
-            *ngFor="
-              let link
-              of quickLinks
-            "
-          >
-
-            <a
-              (click)="scrollTo(link.id)"
-            >
-
+          <li *ngFor="let link of quickLinks">
+            <a (click)="scrollTo(link.id)">
               {{ link.name }}
-
             </a>
-
           </li>
-
         </ul>
-
       </div>
-
-
-      <!-- =========================
-           DEPARTMENTS
-      ========================== -->
 
       <div class="footer-column">
-
-        <h4>
-
-          Departments
-
-        </h4>
-
+        <h4>Departments</h4>
 
         <ul>
-
-          <li
-            *ngFor="
-              let department
-              of departments
-            "
-          >
-
-            <a>
-
+          <li *ngFor="let department of departments">
+            <a href="#" (click)="selectDepartment($event, department)">
               {{ department }}
-
             </a>
-
           </li>
-
         </ul>
-
       </div>
-
-
-      <!-- =========================
-           CONTACT
-      ========================== -->
 
       <div class="footer-column footer-contact">
-
-        <h4>
-
-          Contact Us
-
-        </h4>
-
-
+        <h4>Contact Us</h4>
 
         <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
 
-          <i
-            class="fa-solid fa-phone"
-          ></i>
-
-          <span>
-
-            +91 98765 43210
-
-          </span>
-
+          <span> +91 98765 43210 </span>
         </div>
 
-
         <div class="footer-contact-item">
+          <i class="fa-regular fa-envelope"></i>
 
-          <i
-            class="fa-regular fa-envelope"
-          ></i>
-
-          <span>
-
-            care@medicare.com
-
-          </span>
-
+          <span> care@medicare.com </span>
         </div>
 
-
         <div class="footer-contact-item">
-
-          <i
-            class="fa-solid fa-location-dot"
-          ></i>
+          <i class="fa-solid fa-location-dot"></i>
 
           <span>
-
-            Anna Nagar, Chennai,<br>
+            Anna Nagar, Chennai,<br />
             Tamil Nadu, India
-
           </span>
-
         </div>
-
 
         <div class="footer-contact-item">
+          <i class="fa-regular fa-clock"></i>
 
-          <i
-            class="fa-regular fa-clock"
-          ></i>
-
-          <span>
-
-            Open 24 Hours
-
-          </span>
-
+          <span> Open 24 Hours </span>
         </div>
-
       </div>
-
     </div>
-
-
-    <!-- =========================
-         EMERGENCY CTA
-    ========================== -->
 
     <div class="footer-emergency">
-
       <div class="emergency-content">
-
         <div class="emergency-icon">
-
-          <i
-            class="fa-solid fa-truck-medical"
-          ></i>
-
+          <i class="fa-solid fa-truck-medical"></i>
         </div>
-
 
         <div>
+          <span> Medical Emergency? </span>
 
-          <span>
-
-            Medical Emergency?
-
-          </span>
-
-          <strong>
-
-            Our emergency team is available
-            24 hours a day, 7 days a week.
-
-          </strong>
-
+          <strong> Our emergency team is available 24 hours a day, 7 days a week. </strong>
         </div>
-
       </div>
 
-
-      <a
-        href="tel:+919876543210"
-        class="emergency-call"
-      >
-
-        <i
-          class="fa-solid fa-phone"
-        ></i>
+      <a href="tel:+919876543210" class="emergency-call">
+        <i class="fa-solid fa-phone"></i>
 
         Call Emergency
-
       </a>
-
     </div>
-
-
-    <!-- =========================
-         BOTTOM
-    ========================== -->
 
     <div class="footer-bottom">
-
       <p>
-
         @ {{ currentYear }}
         MediCare Hospital.
-
       </p>
 
-
       <div class="footer-legal">
+        <a href="#"> Privacy Policy </a>
 
-        <a href="#">
-
-          Privacy Policy
-
-        </a>
-
-        <a href="#">
-
-          Terms of Service
-
-        </a>
-
+        <a href="#"> Terms of Service </a>
       </div>
-
     </div>
-
   </div>
-
 </footer>

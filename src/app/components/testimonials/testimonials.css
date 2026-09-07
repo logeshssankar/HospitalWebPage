@@ -1,31 +1,20 @@
 .testimonials {
-
   position: relative;
 
   background: var(--bg-main);
 
   overflow: hidden;
-
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 .section-title {
-
   max-width: 700px;
 
   margin: 0 auto 50px;
 
   text-align: center;
-
 }
 
-
 .section-label {
-
   display: inline-flex;
 
   align-items: center;
@@ -43,12 +32,9 @@
   letter-spacing: 1px;
 
   margin-bottom: 14px;
-
 }
 
-
 .section-title h2 {
-
   color: var(--text-main);
 
   font-size: clamp(36px, 4vw, 50px);
@@ -58,34 +44,21 @@
   letter-spacing: -1.5px;
 
   margin-bottom: 17px;
-
 }
-
 
 .section-title h2 span {
-
   color: var(--primary);
-
 }
 
-
 .section-title p {
-
   color: var(--text-secondary);
 
   font-size: 14px;
 
   line-height: 1.8;
-
 }
 
-
-/* =========================
-   TESTIMONIAL WRAPPER
-========================= */
-
 .testimonial-wrapper {
-
   position: relative;
 
   display: flex;
@@ -95,16 +68,9 @@
   justify-content: center;
 
   gap: 30px;
-
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .testimonial-card {
-
   position: relative;
 
   width: min(720px, 100%);
@@ -119,19 +85,10 @@
 
   text-align: center;
 
-  box-shadow:
-    0 15px 40px
-    rgba(24, 59, 67, 0.06);
-
+  box-shadow: 0 15px 40px rgba(24, 59, 67, 0.06);
 }
 
-
-/* =========================
-   QUOTE
-========================= */
-
 .quote-icon {
-
   width: 48px;
 
   height: 48px;
@@ -151,16 +108,9 @@
   color: var(--primary);
 
   font-size: 18px;
-
 }
 
-
-/* =========================
-   RATING
-========================= */
-
 .rating {
-
   display: flex;
 
   justify-content: center;
@@ -168,25 +118,15 @@
   gap: 4px;
 
   margin-bottom: 20px;
-
 }
 
-
 .rating i {
-
   color: #d99a32;
 
   font-size: 11px;
-
 }
 
-
-/* =========================
-   REVIEW
-========================= */
-
 blockquote {
-
   max-width: 600px;
 
   margin: 0 auto 30px;
@@ -198,16 +138,9 @@ blockquote {
   line-height: 1.8;
 
   font-weight: 500;
-
 }
 
-
-/* =========================
-   PATIENT
-========================= */
-
 .patient {
-
   display: flex;
 
   align-items: center;
@@ -219,11 +152,9 @@ blockquote {
   padding-top: 22px;
 
   border-top: 1px solid var(--border);
-
 }
 
-
-.patient img {
+/* .patient img {
 
   width: 45px;
 
@@ -235,18 +166,13 @@ blockquote {
 
   object-fit: cover;
 
-}
-
+} */
 
 .patient-info {
-
   text-align: left;
-
 }
 
-
 .patient-info strong {
-
   display: block;
 
   color: var(--text-main);
@@ -254,23 +180,17 @@ blockquote {
   font-size: 11px;
 
   margin-bottom: 3px;
-
 }
 
-
 .patient-info span {
-
   display: block;
 
   color: var(--text-secondary);
 
   font-size: 9px;
-
 }
 
-
 .verified {
-
   display: flex;
 
   align-items: center;
@@ -286,25 +206,15 @@ blockquote {
   color: var(--text-secondary);
 
   font-size: 8px;
-
 }
 
-
 .verified i {
-
   color: var(--primary);
 
   font-size: 10px;
-
 }
 
-
-/* =========================
-   SLIDER BUTTONS
-========================= */
-
 .slider-btn {
-
   width: 42px;
 
   height: 42px;
@@ -334,12 +244,9 @@ blockquote {
     color 0.3s ease,
     border-color 0.3s ease,
     transform 0.3s ease;
-
 }
 
-
 .slider-btn:hover {
-
   background: var(--primary);
 
   border-color: var(--primary);
@@ -347,16 +254,9 @@ blockquote {
   color: white;
 
   transform: translateY(-2px);
-
 }
 
-
-/* =========================
-   DOTS
-========================= */
-
 .testimonial-dots {
-
   display: flex;
 
   justify-content: center;
@@ -366,12 +266,9 @@ blockquote {
   gap: 7px;
 
   margin-top: 25px;
-
 }
 
-
 .testimonial-dots button {
-
   width: 7px;
 
   height: 7px;
@@ -389,27 +286,17 @@ blockquote {
   transition:
     width 0.3s ease,
     background 0.3s ease;
-
 }
 
-
 .testimonial-dots button.active {
-
   width: 22px;
 
   border-radius: 10px;
 
   background: var(--primary);
-
 }
 
-
-/* =========================
-   TRUST
-========================= */
-
 .testimonial-trust {
-
   display: flex;
 
   justify-content: center;
@@ -423,91 +310,50 @@ blockquote {
   color: var(--text-secondary);
 
   font-size: 10px;
-
 }
-
 
 .testimonial-trust i {
-
   color: var(--primary);
-
 }
-
-
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width: 800px) {
-
   .testimonial-wrapper {
-
     gap: 15px;
-
   }
-
 
   .testimonial-card {
-
     padding: 40px 35px;
-
   }
-
 
   blockquote {
-
     font-size: 14px;
-
   }
-
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
-
   .testimonials {
-
     padding: 75px 0;
-
   }
-
 
   .section-title h2 {
-
     font-size: 34px;
-
   }
-
 
   .section-title p {
-
     font-size: 13px;
-
   }
-
 
   .testimonial-wrapper {
-
     gap: 0;
-
   }
 
-
   .testimonial-card {
-
     padding: 35px 22px;
 
     border-radius: 15px;
-
   }
 
-
   .slider-btn {
-
     position: absolute;
 
     z-index: 2;
@@ -517,42 +363,27 @@ blockquote {
     height: 35px;
 
     font-size: 9px;
-
   }
-
 
   .slider-btn.previous {
-
     left: -7px;
-
   }
-
 
   .slider-btn.next {
-
     right: -7px;
-
   }
 
-
   blockquote {
-
     font-size: 13px;
 
     line-height: 1.75;
-
   }
-
 
   .patient {
-
     flex-wrap: wrap;
-
   }
 
-
   .verified {
-
     width: 100%;
 
     justify-content: center;
@@ -564,31 +395,138 @@ blockquote {
     border-left: none;
 
     border-top: 1px solid var(--border);
-
   }
-
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media (max-width: 380px) {
-
   .testimonial-card {
-
     padding: 30px 18px;
-
   }
 
-
   .quote-icon {
-
     width: 42px;
 
     height: 42px;
-
   }
+}
 
+.patient img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  image-rendering: auto;
+  flex-shrink: 0;
+}
+
+.testimonials .section-title .section-label {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+.testimonials .section-title h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.testimonials .section-title > p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes titleFadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title.section-in-view .section-label {
+  animation: titleFadeDown 0.55s ease both;
+  animation-delay: 0.05s;
+}
+
+.section-title.section-in-view h2 {
+  animation: titleFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.15s;
+}
+
+.section-title.section-in-view > p {
+  animation: titleFadeUp 0.6s ease both;
+  animation-delay: 0.3s;
+}
+
+.testimonial-wrapper {
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+}
+
+.testimonial-dots {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.testimonial-trust {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@keyframes wrapperReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dotsReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes trustReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-wrapper.section-in-view {
+  animation: wrapperReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.4s;
+}
+
+.testimonial-dots.section-in-view {
+  animation: dotsReveal 0.5s ease both;
+  animation-delay: 0.75s;
+}
+
+.testimonial-trust.section-in-view {
+  animation: trustReveal 0.5s ease both;
+  animation-delay: 0.85s;
+}
+
+.testimonial-content {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes testimonialCrossfade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-content.fade-in {
+  animation: testimonialCrossfade 0.45s ease both;
 }

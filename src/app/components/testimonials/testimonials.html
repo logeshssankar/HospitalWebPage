@@ -1,199 +1,95 @@
-<section
-  class="testimonials"
-  id="testimonials"
->
-
+<section class="testimonials" id="testimonials" #testimonialsSection>
   <div class="container">
-
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <div class="section-title">
-
+    <div class="section-title" [class.section-in-view]="testimonialsVisible">
       <div class="section-label">
-
         <i class="fa-solid fa-comment-medical"></i>
 
         Patient Stories
-
       </div>
 
-
       <h2>
-
         Care that makes a
 
         <span>difference.</span>
-
       </h2>
 
-
-      <p>
-
-        Hear from patients and families who have
-        experienced our care firsthand.
-
-      </p>
-
+      <p>Hear from patients and families who have experienced our care firsthand.</p>
     </div>
 
-
-    <!-- =========================
-         TESTIMONIAL
-    ========================== -->
-
-    <div class="testimonial-wrapper">
-
-
-      <!-- Previous -->
-
+    <div
+      class="testimonial-wrapper"
+      [class.section-in-view]="testimonialsVisible"
+      (mouseenter)="pauseAutoplay()"
+      (mouseleave)="resumeAutoplay()"
+    >
       <button
         class="slider-btn previous"
         (click)="previousTestimonial()"
         aria-label="Previous testimonial"
       >
-
         <i class="fa-solid fa-arrow-left"></i>
-
       </button>
-
-
-      <!-- Card -->
 
       <div class="testimonial-card">
-
-
-        <!-- Quote -->
-
-        <div class="quote-icon">
-
-          <i class="fa-solid fa-quote-left"></i>
-
-        </div>
-
-
-        <!-- Rating -->
-
-        <div class="rating">
-
-          <i
-            *ngFor="
-              let star
-              of getStars(currentTestimonial.rating)
-            "
-            class="fa-solid fa-star"
-          ></i>
-
-        </div>
-
-
-        <!-- Review -->
-
-        <blockquote>
-
-          "{{ currentTestimonial.review }}"
-
-        </blockquote>
-
-
-        <!-- Patient -->
-
-        <div class="patient">
-
-          <img
-            [src]="currentTestimonial.image"
-            [alt]="currentTestimonial.name"
-          />
-
-
-          <div class="patient-info">
-
-            <strong>
-
-              {{ currentTestimonial.name }}
-
-            </strong>
-
-
-            <span>
-
-              {{ currentTestimonial.role }}
-
-            </span>
-
+        <div class="testimonial-content" [class.fade-in]="isTransitioning">
+          <div class="quote-icon">
+            <i class="fa-solid fa-quote-left"></i>
           </div>
 
-
-          <div class="verified">
-
+          <div class="rating">
             <i
-              class="fa-solid fa-circle-check"
+              *ngFor="let star of getStars(currentTestimonial.rating)"
+              class="fa-solid fa-star"
             ></i>
-
-            Verified Patient
-
           </div>
 
-        </div>
+          <blockquote>"{{ currentTestimonial.review }}"</blockquote>
 
+          <div class="patient">
+            <img
+              [src]="currentTestimonial.image"
+              [alt]="currentTestimonial.name"
+              loading="eager"
+              decoding="async"
+            />
+
+            <div class="patient-info">
+              <strong>
+                {{ currentTestimonial.name }}
+              </strong>
+
+              <span>
+                {{ currentTestimonial.role }}
+              </span>
+            </div>
+
+            <div class="verified">
+              <i class="fa-solid fa-circle-check"></i>
+
+              Verified Patient
+            </div>
+          </div>
+        </div>
       </div>
 
-
-      <!-- Next -->
-
-      <button
-        class="slider-btn next"
-        (click)="nextTestimonial()"
-        aria-label="Next testimonial"
-      >
-
+      <button class="slider-btn next" (click)="nextTestimonial()" aria-label="Next testimonial">
         <i class="fa-solid fa-arrow-right"></i>
-
       </button>
-
     </div>
 
-
-    <!-- =========================
-         DOTS
-    ========================== -->
-
-    <div class="testimonial-dots">
-
+    <div class="testimonial-dots" [class.section-in-view]="testimonialsVisible">
       <button
-        *ngFor="
-          let testimonial
-          of testimonials;
-          let i = index
-        "
+        *ngFor="let testimonial of testimonials; let i = index"
         [class.active]="currentIndex === i"
         (click)="selectTestimonial(i)"
-        [attr.aria-label]="
-          'View testimonial ' + (i + 1)
-        "
-      >
-      </button>
-
+        [attr.aria-label]="'View testimonial ' + (i + 1)"
+      ></button>
     </div>
 
-
-    <!-- Trust Message -->
-
-    <div class="testimonial-trust">
-
+    <div class="testimonial-trust" [class.section-in-view]="testimonialsVisible">
       <i class="fa-solid fa-shield-heart"></i>
 
-      <span>
-
-        Trusted by thousands of patients
-        across our community
-
-      </span>
-
+      <span> Trusted by thousands of patients across our community </span>
     </div>
-
   </div>
-
 </section>

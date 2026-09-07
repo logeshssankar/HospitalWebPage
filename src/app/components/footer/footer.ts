@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,60 +9,67 @@ import { Component } from '@angular/core';
   styleUrl: './footer.css',
 })
 export class Footer {
- currentYear = new Date().getFullYear();
+  currentYear = new Date().getFullYear();
 
+  constructor(private departmentService: DepartmentService) {}
 
   quickLinks = [
     {
       name: 'Home',
-      id: 'home'
+      id: 'home',
     },
     {
       name: 'About Us',
-      id: 'about'
+      id: 'about',
     },
     {
       name: 'Services',
-      id: 'services'
+      id: 'services',
     },
     {
       name: 'Doctors',
-      id: 'doctors'
+      id: 'doctors',
     },
     {
       name: 'Appointment',
-      id: 'appointment'
+      id: 'appointment',
     },
     {
       name: 'Contact',
-      id: 'contact'
-    }
+      id: 'contact',
+    },
   ];
-
 
   departments = [
     'Cardiology',
     'Neurology',
     'Orthopedics',
     'Pediatrics',
-    'Dermatology',
-    'General Medicine'
+    'Gynecology',
+    'General Medicine',
   ];
 
+  selectDepartment(event: Event, department: string): void {
+    event.preventDefault();
+
+    this.departmentService.selectDepartment(department);
+
+    const element = document.getElementById('departments');
+
+    element?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
 
   scrollTo(id: string): void {
-
-    const element =
-      document.getElementById(id);
+    const element = document.getElementById(id);
 
     if (element) {
-
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
-
     }
-
   }
 }

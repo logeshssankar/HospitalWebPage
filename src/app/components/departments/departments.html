@@ -1,10 +1,6 @@
 <section class="departments" id="departments">
-
   <div class="container">
-
-    <!-- Section Header -->
     <div class="section-title">
-
       <div class="section-label">
         <i class="fa-solid fa-hospital"></i>
         Our Departments
@@ -16,29 +12,20 @@
       </h2>
 
       <p>
-        Our specialized departments bring together experienced
-        medical professionals and modern healthcare technology
-        to provide comprehensive treatment.
+        Our specialized departments bring together experienced medical professionals and modern
+        healthcare technology to provide comprehensive treatment.
       </p>
-
     </div>
 
-
-    <!-- Department Explorer -->
     <div class="department-explorer">
-
-      <!-- LEFT: Department List -->
       <div class="department-list">
-
         <button
           *ngFor="let department of departments; let i = index"
           class="department-item"
           [class.active]="selectedIndex === i"
           (click)="selectDepartment(i)"
         >
-
           <div class="department-item-left">
-
             <div class="department-icon">
               <i [class]="department.icon"></i>
             </div>
@@ -48,88 +35,51 @@
                 {{ department.title }}
               </strong>
 
-              <span>
-                {{ department.doctors }} Specialists
-              </span>
+              <span> {{ department.doctors }} Specialists </span>
             </div>
-
           </div>
 
-
           <i class="fa-solid fa-arrow-right arrow-icon"></i>
-
         </button>
-
       </div>
 
-
-      <!-- RIGHT: Selected Department -->
       <div class="department-details">
-
-        <div class="details-content">
-
+        <div class="details-content" [class.animate-in]="animateIn">
           <div class="details-icon">
             <i [class]="selectedDepartment.icon"></i>
           </div>
 
-
-          <span class="details-label">
-            Department {{ selectedDepartment.number }}
-          </span>
-
+          <span class="details-label"> Department {{ selectedDepartment.number }} </span>
 
           <h3>
             {{ selectedDepartment.title }}
           </h3>
 
-
           <p>
             {{ selectedDepartment.description }}
           </p>
 
-
-          <!-- Features -->
           <div class="department-features">
-
-            <div
-              *ngFor="let feature of selectedDepartment.features"
-              class="department-feature"
-            >
-
+            <div *ngFor="let feature of selectedDepartment.features" class="department-feature">
               <i class="fa-solid fa-circle-check"></i>
 
               <span>
                 {{ feature }}
               </span>
-
             </div>
-
           </div>
 
-
-          <button
-            class="department-btn"
-            (click)="viewDepartment()"
-          >
+          <button class="department-btn" (click)="viewDepartment()">
             Meet Our Specialists
 
             <i class="fa-solid fa-arrow-right"></i>
           </button>
-
         </div>
 
-
-        <!-- Decorative Medical Icon -->
         <div class="details-decoration">
-
           <i [class]="selectedDepartment.icon"></i>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>

@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { DepartmentService } from '../department.service';
 
 interface Department {
-
   number: string;
 
   title: string;
@@ -15,9 +14,7 @@ interface Department {
   description: string;
 
   features: string[];
-
 }
-
 
 @Component({
   selector: 'app-departments',
@@ -25,21 +22,24 @@ interface Department {
   templateUrl: './departments.html',
   styleUrl: './departments.css',
 })
-export class Departments {
+export class Departments implements OnInit {
+  constructor(private departmentService: DepartmentService) {}
 
-   /*
-   * Currently selected department
-   */
+  ngOnInit(): void {
+    this.departmentService.department$.subscribe((departmentName) => {
+      const index = this.departments.findIndex((department) => department.title === departmentName);
+
+      if (index !== -1) {
+        this.selectDepartment(index);
+      }
+    });
+  }
+
   selectedIndex = 0;
+  animateIn = true;
 
-
-  /*
-   * Department data
-   */
   departments: Department[] = [
-
     {
-
       number: '01',
 
       title: 'Cardiology',
@@ -52,22 +52,17 @@ export class Departments {
         'Our cardiology department provides comprehensive heart care, from preventive screenings and diagnosis to advanced cardiac treatments.',
 
       features: [
-
         'Advanced cardiac diagnosis',
 
         'Heart disease prevention',
 
         'Cardiac rehabilitation',
 
-        '24/7 cardiac emergency support'
-
-      ]
-
+        '24/7 cardiac emergency support',
+      ],
     },
 
-
     {
-
       number: '02',
 
       title: 'Neurology',
@@ -80,22 +75,17 @@ export class Departments {
         'Our neurology specialists provide expert diagnosis and treatment for disorders affecting the brain, spine, and nervous system.',
 
       features: [
-
         'Neurological diagnosis',
 
         'Stroke management',
 
         'Headache treatment',
 
-        'Neuro rehabilitation'
-
-      ]
-
+        'Neuro rehabilitation',
+      ],
     },
 
-
     {
-
       number: '03',
 
       title: 'Orthopedics',
@@ -108,22 +98,17 @@ export class Departments {
         'Comprehensive orthopedic care for bones, joints, muscles, and mobility-related conditions using modern treatment methods.',
 
       features: [
-
         'Joint replacement',
 
         'Sports injury treatment',
 
         'Fracture management',
 
-        'Physiotherapy support'
-
-      ]
-
+        'Physiotherapy support',
+      ],
     },
 
-
     {
-
       number: '04',
 
       title: 'Pediatrics',
@@ -136,22 +121,17 @@ export class Departments {
         'Specialized healthcare for infants, children, and adolescents in a safe and friendly environment.',
 
       features: [
-
         'Child health checkups',
 
         'Vaccination services',
 
         'Growth monitoring',
 
-        'Pediatric emergency care'
-
-      ]
-
+        'Pediatric emergency care',
+      ],
     },
 
-
     {
-
       number: '05',
 
       title: 'Gynecology',
@@ -164,22 +144,17 @@ export class Departments {
         'Comprehensive women’s healthcare covering routine checkups, reproductive health, pregnancy care, and specialized treatment.',
 
       features: [
-
         'Women wellness care',
 
         'Pregnancy support',
 
         'Reproductive healthcare',
 
-        'Preventive screenings'
-
-      ]
-
+        'Preventive screenings',
+      ],
     },
 
-
     {
-
       number: '06',
 
       title: 'General Medicine',
@@ -192,54 +167,37 @@ export class Departments {
         'Our general medicine team provides comprehensive primary healthcare, diagnosis, prevention, and long-term health management.',
 
       features: [
-
         'Routine health checkups',
 
         'Preventive healthcare',
 
         'Chronic disease management',
 
-        'General medical consultation'
-
-      ]
-
-    }
-
+        'General medical consultation',
+      ],
+    },
   ];
 
-
-  /*
-   * Get currently selected department
-   */
   get selectedDepartment(): Department {
-
     return this.departments[this.selectedIndex];
-
   }
 
-
-  /*
-   * Select department
-   */
   selectDepartment(index: number): void {
+    if (this.selectedIndex === index) return;
 
-    this.selectedIndex = index;
+    this.animateIn = false;
 
+    setTimeout(() => {
+      this.selectedIndex = index;
+      this.animateIn = true;
+    }, 0);
   }
 
-
-  /*
-   * Button action
-   */
   viewDepartment(): void {
-
-    const section =
-      document.getElementById('doctors');
+    const section = document.getElementById('doctors');
 
     section?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-
   }
-
 }

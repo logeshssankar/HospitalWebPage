@@ -8,24 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './hero.css',
 })
 export class Hero {
-scrollToAppointment(): void {
-
+  scrollToAppointment(): void {
     const section = document.getElementById('appointment');
 
     section?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-
   }
 
-
   scrollToServices(): void {
-
     const section = document.getElementById('services');
 
     section?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-
   }
 }

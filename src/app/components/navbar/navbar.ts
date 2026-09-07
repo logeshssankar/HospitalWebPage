@@ -8,97 +8,69 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-
   isScrolled = false;
 
   menuOpen = false;
 
   activeSection = 'home';
 
-
   navItems = [
     {
       label: 'Home',
-      id: 'home'
+      id: 'home',
     },
     {
       label: 'About',
-      id: 'about'
+      id: 'about',
     },
     {
       label: 'Services',
-      id: 'services'
+      id: 'services',
     },
     {
       label: 'Doctors',
-      id: 'doctors'
+      id: 'doctors',
     },
     {
       label: 'Departments',
-      id: 'departments'
+      id: 'departments',
     },
     {
       label: 'Contact',
-      id: 'contact'
-    }
+      id: 'contact',
+    },
   ];
 
-
-  /*
-   * Detect page scrolling
-   */
   @HostListener('window:scroll')
   onWindowScroll(): void {
-
     this.isScrolled = window.scrollY > 50;
 
     this.updateActiveSection();
-
   }
 
-
-  /*
-   * Toggle mobile menu
-   */
   toggleMenu(): void {
-
     this.menuOpen = !this.menuOpen;
-
   }
 
-
-  /*
-   * Navigate to section
-   */
   scrollTo(sectionId: string): void {
-
     const section = document.getElementById(sectionId);
 
     if (section) {
-
       section.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
-
     }
 
     this.menuOpen = false;
-
   }
 
-
-  /*
-   * Highlight active navigation item
-   */
   updateActiveSection(): void {
-
-    const sections = this.navItems.map(item => item.id);
+    const sections = this.navItems.map((item) => item.id);
 
     sections.push('home');
 
     for (const sectionId of sections) {
-
       const section = document.getElementById(sectionId);
 
       if (!section) {
@@ -107,19 +79,11 @@ export class Navbar {
 
       const rect = section.getBoundingClientRect();
 
-      if (
-        rect.top <= 150 &&
-        rect.bottom >= 150
-      ) {
-
+      if (rect.top <= 150 && rect.bottom >= 150) {
         this.activeSection = sectionId;
 
         break;
-
       }
-
     }
-
   }
-
 }
