@@ -1,6 +1,6 @@
 <section class="appointment" id="appointment" #appointmentSection>
   <div class="container">
-    <div class="section-title" [class.section-in-view]="appointmentVisible">
+    <div class="section-title" [class.section-in-view]="appointmentVisible()">
       <div class="section-label">
         <i class="fa-regular fa-calendar-check"></i>
 
@@ -19,7 +19,7 @@
       </p>
     </div>
 
-    <div class="appointment-grid" [class.section-in-view]="appointmentVisible">
+    <div class="appointment-grid" [class.section-in-view]="appointmentVisible()">
       <div class="appointment-form-card">
         <div class="form-header">
           <div>
@@ -34,35 +34,60 @@
         </div>
 
         <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()" novalidate>
+          <!-- Row 1: Name & Age -->
           <div class="form-row">
             <div class="form-group">
-              <label>
-                Full Name
-
-                <span>*</span>
-              </label>
-
+              <label> Full Name <span>*</span> </label>
               <div class="input-wrapper" [class.error]="f['name'].invalid && f['name'].touched">
                 <i class="fa-regular fa-user"></i>
-
                 <input type="text" formControlName="name" placeholder="Enter your full name" />
               </div>
-
               <small class="error-message" *ngIf="f['name'].invalid && f['name'].touched">
                 Please enter at least 3 characters.
               </small>
             </div>
 
             <div class="form-group">
-              <label>
-                Phone Number
+              <label> Age <span>*</span> </label>
+              <div class="input-wrapper" [class.error]="f['age'].invalid && f['age'].touched">
+                <i class="fa-solid fa-cake-candles"></i>
+                <input
+                  type="number"
+                  formControlName="age"
+                  placeholder="Enter your age"
+                  min="1"
+                  max="120"
+                />
+              </div>
+              <small class="error-message" *ngIf="f['age'].invalid && f['age'].touched">
+                Please enter a valid age between 1 and 120.
+              </small>
+            </div>
+          </div>
 
-                <span>*</span>
-              </label>
+          <!-- Row 2: Sex & Phone -->
+          <div class="form-row">
+            <div class="form-group">
+              <label> Sex <span>*</span> </label>
+              <div class="input-wrapper" [class.error]="f['sex'].invalid && f['sex'].touched">
+                <i class="fa-solid fa-venus-mars"></i>
+                <select formControlName="sex">
+                  <option value="" disabled>Select sex</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
+              <small class="error-message" *ngIf="f['sex'].invalid && f['sex'].touched">
+                Please select your sex.
+              </small>
+            </div>
 
+            <div class="form-group">
+              <label> Phone Number <span>*</span> </label>
               <div class="input-wrapper" [class.error]="f['phone'].invalid && f['phone'].touched">
                 <i class="fa-solid fa-phone"></i>
-
                 <input
                   type="tel"
                   formControlName="phone"
@@ -70,99 +95,82 @@
                   maxlength="10"
                 />
               </div>
-
               <small class="error-message" *ngIf="f['phone'].invalid && f['phone'].touched">
                 Enter a valid 10-digit mobile number.
               </small>
             </div>
           </div>
 
+          <!-- Row 3: Email & Department -->
           <div class="form-row">
             <div class="form-group">
-              <label>
-                Email Address
-
-                <span>*</span>
-              </label>
-
+              <label> Email Address <span>*</span> </label>
               <div class="input-wrapper" [class.error]="f['email'].invalid && f['email'].touched">
                 <i class="fa-regular fa-envelope"></i>
-
                 <input type="email" formControlName="email" placeholder="you@example.com" />
               </div>
-
               <small class="error-message" *ngIf="f['email'].invalid && f['email'].touched">
                 Please enter a valid email address.
               </small>
             </div>
 
             <div class="form-group">
-              <label>
-                Department
-
-                <span>*</span>
-              </label>
+              <label>Department <span>*</span></label>
 
               <div class="input-wrapper">
                 <i class="fa-solid fa-hospital"></i>
 
-                <select formControlName="department">
-                  <option value="" disabled>Select department</option>
+                <div class="locked-field">
+                  <select formControlName="department" [class.locked]="isDepartmentLocked">
+                    <option value="">Select Department</option>
 
-                  <option *ngFor="let department of departments" [value]="department">
-                    {{ department }}
-                  </option>
-                </select>
+                    <option *ngFor="let department of departments" [value]="department">
+                      {{ department }}
+                    </option>
+                  </select>
 
-                <i class="fa-solid fa-chevron-down select-arrow"></i>
+                  <i *ngIf="isDepartmentLocked" class="fa-solid fa-lock"></i>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Row 4: Doctor & Date -->
           <div class="form-row">
             <div class="form-group">
-              <label>
-                Preferred Doctor
-
-                <span>*</span>
-              </label>
+              <label>Preferred Doctor <span>*</span></label>
 
               <div class="input-wrapper">
                 <i class="fa-solid fa-user-doctor"></i>
 
-                <select formControlName="doctor">
-                  <option value="" disabled>Select doctor</option>
+                <div class="locked-field">
+                  <select formControlName="doctor" [class.locked]="isDoctorLocked">
+                    <option value="">Select Doctor</option>
 
-                  <option *ngFor="let doctor of doctors" [value]="doctor">
-                    {{ doctor }}
-                  </option>
-                </select>
+                    <option *ngFor="let doctor of availableDoctors" [value]="doctor.name">
+                      {{ doctor.name }}
+                    </option>
+                  </select>
 
-                <i class="fa-solid fa-chevron-down select-arrow"></i>
+                  <i *ngIf="isDoctorLocked" class="fa-solid fa-lock"></i>
+                </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label>
-                Preferred Date
-
-                <span>*</span>
-              </label>
-
+              <label> Preferred Date <span>*</span> </label>
               <div class="input-wrapper">
                 <i class="fa-regular fa-calendar"></i>
-
                 <input type="date" formControlName="date" />
               </div>
             </div>
           </div>
 
+          <!-- Row 5: Additional Message -->
           <div class="form-group">
-            <label> Additional Message </label>
-
+            <label>Additional Message</label>
             <div class="input-wrapper textarea-wrapper">
               <i class="fa-regular fa-message"></i>
-
               <textarea
                 formControlName="message"
                 rows="4"
@@ -171,17 +179,26 @@
             </div>
           </div>
 
-          <button type="submit" class="submit-btn">
-            Book Appointment
-
-            <i class="fa-solid fa-arrow-right"></i>
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">
+              Book Appointment <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <span *ngIf="isSubmitting">
+              Booking Appointment... <i class="fa-solid fa-spinner fa-spin"></i>
+            </span>
           </button>
 
+          <!-- Notes & Errors -->
           <p class="form-note">
             <i class="fa-solid fa-lock"></i>
-
             Your information is secure and confidential.
           </p>
+
+          <div class="api-error" *ngIf="errorMessage">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            {{ errorMessage }}
+          </div>
         </form>
       </div>
 
@@ -211,6 +228,18 @@
 
           <div class="contact-item">
             <div class="contact-icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <div>
+              <strong> Email Us </strong>
+
+              <span> care@medicare.com </span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
               <i class="fa-solid fa-location-dot"></i>
             </div>
 
@@ -230,18 +259,6 @@
               <strong> Working Hours </strong>
 
               <span> Mon - Sun · 24 Hours </span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fa-regular fa-envelope"></i>
-            </div>
-
-            <div>
-              <strong> Email Us </strong>
-
-              <span> care@medicare.com </span>
             </div>
           </div>
         </div>
@@ -270,3 +287,551 @@
     </div>
   </div>
 </section>
+
+<!-- =====================================================
+     APPOINTMENT MODAL
+     ===================================================== -->
+
+<div
+  class="appointment-modal-backdrop"
+  *ngIf="isModalOpen"
+  (click)="onModalBackdropClick($event)"
+  (keydown)="onKeyDown($event)"
+  tabindex="-1"
+>
+
+  <div class="appointment-modal">
+
+    <!-- ================================================
+         MODAL HEADER
+         ================================================ -->
+
+    <div class="appointment-modal-header">
+
+      <div class="modal-title-wrapper">
+
+        <div class="modal-icon">
+          <i class="fa-regular fa-calendar-check"></i>
+        </div>
+
+        <div>
+
+          <h2>
+            Book an Appointment
+          </h2>
+
+          <p>
+            Schedule your visit with our specialist
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CLOSE BUTTON -->
+
+      <button
+        type="button"
+        class="modal-close-btn"
+        (click)="closeAppointmentModal()"
+        aria-label="Close appointment form"
+      >
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+
+    <!-- ================================================
+         MODAL BODY
+         ================================================ -->
+
+    <div class="appointment-modal-body">
+
+      <!--
+
+        IMPORTANT:
+
+        Put your EXISTING appointment form here.
+
+        Do not create another FormGroup.
+
+        Use:
+
+        <form
+          [formGroup]="appointmentForm"
+          (ngSubmit)="submitAppointment()"
+        >
+
+      -->
+
+
+      <form
+        [formGroup]="appointmentForm"
+        (ngSubmit)="submitAppointment()"
+        class="modal-appointment-form"
+      >
+
+        <!-- ==========================================
+             PATIENT NAME + PHONE
+             ========================================== -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Patient Name
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper"
+              [class.error]="
+                f['name'].invalid &&
+                f['name'].touched
+              "
+            >
+
+              <i class="fa-regular fa-user"></i>
+
+              <input
+                type="text"
+                formControlName="name"
+                placeholder="Enter your full name"
+              />
+
+            </div>
+
+            <small
+              class="error-message"
+              *ngIf="
+                f['name'].invalid &&
+                f['name'].touched
+              "
+            >
+              Please enter your name.
+            </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Phone Number
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper" [class.error]="f['phone'].invalid && f['phone'].touched">
+                <i class="fa-solid fa-phone"></i>
+                <input
+                  type="tel"
+                  formControlName="phone"
+                  placeholder="10-digit mobile number"
+                  maxlength="10"
+                />
+              </div>
+
+            <small
+              class="error-message"
+              *ngIf="
+                f['phone'].invalid &&
+                f['phone'].touched
+              "
+            >
+              Please enter a valid mobile number.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             AGE + SEX
+             ========================================== -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Age
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper"
+              [class.error]="
+                f['age'].invalid &&
+                f['age'].touched
+              "
+            >
+
+              <i class="fa-solid fa-cake-candles"></i>
+
+              <input
+                type="number"
+                formControlName="age"
+                placeholder="Enter age"
+                min="1"
+                max="120"
+              />
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Sex
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper">
+
+              <i class="fa-solid fa-venus-mars"></i>
+
+              <select
+                formControlName="sex"
+              >
+
+                <option value="">
+                  Select Sex
+                </option>
+
+                <option value="Male">
+                  Male
+                </option>
+
+                <option value="Female">
+                  Female
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+              <i
+                class="fa-solid fa-chevron-down select-arrow"
+              ></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             EMAIL + DEPARTMENT
+             ========================================== -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Email Address
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper"
+              [class.error]="
+                f['email'].invalid &&
+                f['email'].touched
+              "
+            >
+
+              <i class="fa-regular fa-envelope"></i>
+
+              <input
+                type="email"
+                formControlName="email"
+                placeholder="you@example.com"
+              />
+
+            </div>
+
+            <small
+              class="error-message"
+              *ngIf="
+                f['email'].invalid &&
+                f['email'].touched
+              "
+            >
+              Please enter a valid email address.
+            </small>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Department
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper locked-input"
+              [class.is-locked]="isDepartmentLocked"
+            >
+
+              <i class="fa-solid fa-hospital"></i>
+
+              <select
+                formControlName="department"
+                [class.locked]="isDepartmentLocked"
+              >
+
+                <option value="">
+                  Select Department
+                </option>
+
+                <option
+                  *ngFor="let department of departments"
+                  [value]="department"
+                >
+                  {{ department }}
+                </option>
+
+              </select>
+
+
+              <!-- LOCK ICON -->
+
+              <i
+                *ngIf="isDepartmentLocked"
+                class="fa-solid fa-lock lock-icon"
+              ></i>
+
+
+              <i
+                *ngIf="!isDepartmentLocked"
+                class="fa-solid fa-chevron-down select-arrow"
+              ></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             DOCTOR + DATE
+             ========================================== -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Preferred Doctor
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper locked-input"
+              [class.is-locked]="isDoctorLocked"
+            >
+
+              <i class="fa-solid fa-user-doctor"></i>
+
+              <select
+                formControlName="doctor"
+                [class.locked]="isDoctorLocked"
+              >
+
+                <option value="">
+                  Select Doctor
+                </option>
+
+                <option
+                  *ngFor="let doctor of availableDoctors"
+                  [value]="doctor.name"
+                >
+                  {{ doctor.name }}
+                </option>
+
+              </select>
+
+
+              <!-- LOCK ICON -->
+
+              <i
+                *ngIf="isDoctorLocked"
+                class="fa-solid fa-lock lock-icon"
+              ></i>
+
+
+              <i
+                *ngIf="!isDoctorLocked"
+                class="fa-solid fa-chevron-down select-arrow"
+              ></i>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Preferred Date
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper"
+              [class.error]="
+                f['date'].invalid &&
+                f['date'].touched
+              "
+            >
+
+              <i
+                class="fa-regular fa-calendar"
+              ></i>
+
+              <input
+                type="date"
+                formControlName="date"
+              />
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              Preferred Time
+              <span>*</span>
+            </label>
+
+            <div
+              class="input-wrapper"
+              [class.error]="
+                f['date'].invalid &&
+                f['date'].touched
+              "
+            >
+
+              <i
+                class="fa-regular fa-clock"
+              ></i>
+
+              <input
+                type="time"
+                formControlName="time"
+              />
+
+            </div>
+
+          </div>
+        </div>
+
+        
+
+
+        <!-- ==========================================
+             MESSAGE
+             ========================================== -->
+
+        <div class="form-group full-width">
+
+          <label>
+            Message
+          </label>
+
+          <div class="input-wrapper textarea-wrapper">
+
+            <i class="fa-regular fa-comment-dots"></i>
+
+            <textarea
+              formControlName="message"
+              placeholder="Tell us anything important about your visit..."
+              rows="4"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             ERROR MESSAGE
+             ========================================== -->
+
+        <div
+          class="form-submit-error"
+          *ngIf="errorMessage"
+        >
+
+          <i class="fa-solid fa-circle-exclamation"></i>
+
+          {{ errorMessage }}
+
+        </div>
+
+
+        <!-- ==========================================
+             SUBMIT BUTTON
+             ========================================== -->
+
+        <div class="modal-form-footer">
+
+          <button
+            type="button"
+            class="modal-cancel-btn"
+            (click)="closeAppointmentModal()"
+          >
+            Cancel
+          </button>
+
+
+          <button
+            type="submit"
+            class="modal-submit-btn"
+            [disabled]="isSubmitting"
+          >
+
+            <span *ngIf="!isSubmitting">
+
+              <i class="fa-regular fa-calendar-check"></i>
+
+              Book Appointment
+
+            </span>
+
+
+            <span *ngIf="isSubmitting">
+
+              <i class="fa-solid fa-spinner fa-spin"></i>
+
+              Booking Appointment...
+
+            </span>
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

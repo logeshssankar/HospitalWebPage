@@ -160,17 +160,17 @@ export class Services implements AfterViewInit, OnDestroy {
   }
 
   private applyStaggeredVars(card: HTMLElement, progress: number): void {
-    const containerP = this.remap(progress, 0.0, 0.01);
+    const containerP = this.remap(progress, 0.0, 0.10);
 
-    const iconP = this.remap(progress, 0.03, 0.15);
+    const iconP = this.remap(progress, 0.0, 0.15);
 
-    const numberP = this.remap(progress, 0.2, 0.25);
+    const numberP = this.remap(progress, 0.0, 0.20);
 
-    const titleP = this.remap(progress, 0.3, 0.35);
+    const titleP = this.remap(progress, 0.0, 0.25);
 
-    const descP = this.remap(progress, 0.35, 0.4);
+    const descP = this.remap(progress, 0.0, 0.30);
 
-    const linkP = this.remap(progress, 0.4, 0.45);
+    const linkP = this.remap(progress, 0.0, 0.35);
 
     card.style.setProperty('--container-progress', `${containerP}`);
     card.style.setProperty('--icon-progress', `${iconP}`);

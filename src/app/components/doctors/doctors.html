@@ -17,8 +17,78 @@
       </p>
     </div>
 
+    <!-- =========================================
+     DOCTOR FILTERS
+     ========================================= -->
+
+    <div class="doctor-filters">
+      <!-- Department -->
+      <div class="filter-group">
+        <label>
+          <i class="fa-solid fa-hospital"></i>
+          Department
+        </label>
+
+        <div class="filter-select">
+          <select [(ngModel)]="selectedDepartment" (change)="onFilterChange()">
+            <option *ngFor="let department of departments" [value]="department">
+              {{ department }}
+            </option>
+          </select>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+
+      <!-- Availability -->
+      <div class="filter-group">
+        <label>
+          <i class="fa-solid fa-circle-check"></i>
+          Availability
+        </label>
+
+        <div class="filter-select">
+          <select [(ngModel)]="selectedAvailability" (change)="onFilterChange()">
+            <option value="all">All Doctors</option>
+
+            <option value="on-duty">On Duty</option>
+
+            <option value="off-duty">Off Duty</option>
+          </select>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+
+      <!-- Sort -->
+      <div class="filter-group">
+        <label>
+          <i class="fa-solid fa-arrow-down-wide-short"></i>
+          Sort By
+        </label>
+
+        <div class="filter-select">
+          <select [(ngModel)]="selectedSort" (change)="onFilterChange()">
+            <option value="default">Default</option>
+
+            <option value="top-specialists">Top Specialists</option>
+
+            <option value="highest-rated">Highest Rated</option>
+
+            <option value="most-patients">Most Patients</option>
+          </select>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+
     <div class="doctors-grid">
-      <article class="doctor-card" #doctorCard *ngFor="let doctor of doctors; let i = index">
+      <article
+        class="doctor-card"
+        #doctorCard
+        *ngFor="let doctor of paginatedDoctors; let i = index"
+      >
         <div class="doctor-image">
           <img [src]="doctor.image" [alt]="doctor.name" />
 
@@ -83,15 +153,72 @@
           </button>
         </div>
       </article>
+
+      <div class="no-doctors" *ngIf="filteredDoctors.length === 0">
+        <i class="fa-solid fa-user-doctor"></i>
+
+        <p>No doctors found for the selected filters.</p>
+      </div>
     </div>
+
+    <!-- =========================================
+     PAGINATION
+     ========================================= -->
+
+<div
+  class="doctors-pagination"
+  *ngIf="showAllDoctors && totalPages > 1"
+>
+
+  <!-- Previous -->
+  <button
+    class="pagination-btn pagination-arrow"
+    [disabled]="currentPage === 1"
+    (click)="previousPage()"
+    aria-label="Previous page"
+  >
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+
+  <!-- Page Numbers -->
+  <button
+    *ngFor="let page of pageNumbers"
+    class="pagination-btn"
+    [class.active]="currentPage === page"
+    (click)="goToPage(page)"
+  >
+    {{ page }}
+  </button>
+
+
+  <!-- Next -->
+  <button
+    class="pagination-btn pagination-arrow"
+    [disabled]="currentPage === totalPages"
+    (click)="nextPage()"
+    aria-label="Next page"
+  >
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+</div>
 
     <div class="doctors-bottom">
-      <span> Looking for another specialist? </span>
 
-      <button class="view-doctors-btn" (click)="viewAllDoctors()">
-        View All Doctors
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
+  <span>
+    Looking for another specialist?
+  </span>
+
+  <button
+    *ngIf="!showAllDoctors"
+    class="view-doctors-btn"
+    (click)="viewAllDoctors()"
+  >
+    View All Doctors
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+</div>
   </div>
 </section>

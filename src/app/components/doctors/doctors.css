@@ -579,3 +579,327 @@
 
   will-change: transform, opacity;
 }
+
+/* =========================================
+   DOCTOR FILTERS
+   ========================================= */
+
+.doctor-filters {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin: 0 auto 32px;
+
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   FILTER GROUP
+   ========================================= */
+
+.filter-group {
+  flex: 1;
+
+  min-width: 180px;
+}
+
+.filter-group label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 7px;
+
+  color: var(--text-main);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.filter-group label i {
+  color: var(--primary);
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   FILTER SELECT
+   ========================================= */
+
+.filter-select {
+  position: relative;
+
+  width: 100%;
+}
+
+.filter-select select {
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 35px 0 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: #fbfcfc;
+
+  color: var(--text-main);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  outline: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.filter-select select:hover {
+  background: white;
+
+  border-color: var(--primary);
+}
+
+.filter-select select:focus {
+  background: white;
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(22, 125, 141, 0.08);
+}
+
+.filter-select > i {
+  position: absolute;
+
+  right: 13px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--text-secondary);
+
+  font-size: 8px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   DOCTOR GRID
+   ========================================= */
+
+.doctors-grid {
+  width: 100%;
+}
+
+
+/* =========================================
+   NO RESULTS
+   ========================================= */
+
+.no-doctors {
+  grid-column: 1 / -1;
+
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  border: 1px dashed var(--border);
+
+  border-radius: 12px;
+
+  background: white;
+}
+
+.no-doctors i {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--primary);
+
+  font-size: 25px;
+}
+
+.no-doctors p {
+  margin: 0;
+
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+  .doctor-filters {
+    flex-wrap: wrap;
+
+    justify-content: stretch;
+  }
+
+  .filter-group {
+    flex: 1 1 calc(50% - 14px);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .doctor-filters {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    padding: 14px;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-select select {
+    height: 44px;
+  }
+
+}
+
+/* =========================================
+   DOCTORS PAGINATION
+   ========================================= */
+
+.doctors-pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 35px;
+}
+
+
+/* =========================================
+   PAGINATION BUTTON
+   ========================================= */
+
+.pagination-btn {
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--text-main);
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+
+  color: var(--primary);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ACTIVE PAGE
+   ========================================= */
+
+.pagination-btn.active {
+  background: var(--primary);
+
+  border-color: var(--primary);
+
+  color: white;
+
+  box-shadow:
+    0 6px 15px
+    rgba(22, 125, 141, 0.16);
+}
+
+
+/* =========================================
+   ARROWS
+   ========================================= */
+
+.pagination-arrow {
+  font-size: 9px;
+}
+
+
+/* =========================================
+   DISABLED
+   ========================================= */
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
